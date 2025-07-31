@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "@fontsource-variable/montserrat";
+
+@font-face {
+  font-family: "Lupio Black";
+  src: url("/public/fonts/Lupio-Black.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Colores principales */
+  --color-primary: #2e4f3e; /* Verde oscuro */
+  --color-secondary: #a0ae86; /* Verde claro del logo */
+
+  /* Colores neutros */
+  --color-bg-light: #f3f5eb; /* Fondo general claro */
+  --color-text: #7c8a6c; /* Texto neutro */
+  --color-highlight: #cddc9e; /* Hover y acentos */
+  --color-contrast: #ffffff; /* Texto sobre fondos oscuros */
+
+  /* Tipografía */
+  --font-primary: "Montserrat variable", sans-serif;
+  --font-secondary: "Lupio Black", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-light);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h4 {
+  color: var(--color-secondary);
+  margin: 0;
+  font-family: var(--font-secondary);
+}
+
+h3 {
+  margin: 0;
+  font-family: var(--font-secondary);
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+button {
+  background-color: var(--color-secondary);
+  color: black;
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--color-highlight);
+}
+
+header,
+footer {
+  background-color: var(--color-primary);
+
+  color: var(--color-contrast);
+  padding: 1em 2em;
+}
+
+header a,
+footer a {
+  color: var(--color-contrast);
+  font-weight: 600;
+}
+
+header a:hover,
+footer a:hover {
+  color: var(--color-highlight);
+}
+
+.montserrat {
+  font-family: var(--font-primary);
+}
+
+.section {
+  background-color: var(--color-primary);
+}
+
+.hero_layout {
+  height: calc(100vh - 216px);
+}

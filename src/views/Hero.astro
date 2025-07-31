@@ -1,0 +1,161 @@
+---
+import ArrowRight from "../components/icons/ArrowRight.astro";
+---
+
+<section class="section">
+  <div id="hero-key" class="relative h-screen overflow-hidden">
+    <div class="grid grid-cols-2 w-full hero_layout">
+      <div
+        class="border-r-5 border-b-10 border-white flex flex-col justify-center pl-4 gap-6"
+      >
+        <h2 class="text-7xl">UNA NUEVA FORMA DE JUGAR AL PÁDEL</h2>
+        <h2 id="bajo-la-sombra-text" class="text-8xl opacity-0 invisible">
+          BAJO LA SOMBRA
+        </h2>
+      </div>
+      <div
+        class="border-l-5 border-b-10 border-white flex flex-col justify-center pr-4 gap-6 text-right z-40"
+      >
+        <h3
+          id="bajo-la-sombra-button"
+          class="text-8xl opacity-0 invisible cursor-pointer text-white hover:text-[#a0ae86] transition-color duration-150"
+        >
+          PEDÍ UN TURNO
+        </h3>
+        <h3
+          id="bajo-la-sombra-button"
+          class="text-8xl opacity-0 invisible cursor-pointer text-white hover:text-[#a0ae86] transition-color duration-150"
+        >
+          PEDÍ TU FIJO
+        </h3>
+        <!-- <div class="flex gap-4 opacity-0 invisible" id="bajo-la-sombra-button">
+          <button class="flex items-center justify-center gap-2">
+            <span> Pedí tu turno </span>
+            <ArrowRight class="size-6" />
+          </button>
+          <h2>O</h2>
+          <button class="flex items-center justify-center gap-2">
+            <span> Pedí tu fijo </span>
+            <ArrowRight class="size-6" />
+          </button>
+        </div> -->
+      </div>
+    </div>
+    <div
+      id="shadow-overlay"
+      class="absolute inset-0 pointer-events-none"
+      style="
+          --black-opacity: 0;
+          background: linear-gradient(160deg, rgba(0, 0, 0, var(--black-opacity)) 50%, rgba(0, 0, 0, 0) 100%);
+        "
+    >
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#hero-key",
+      start: "top top",
+      end: "+=1000",
+      scrub: 1,
+      pin: true,
+      pinSpacing: true,
+    },
+  });
+
+  tl.to("#shadow-overlay", {
+    "--black-opacity": 0.3,
+    ease: "none",
+  });
+  tl.to("#bajo-la-sombra-text", {
+    autoAlpha: 1,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+
+  tl.to("#bajo-la-sombra-button", {
+    autoAlpha: 1,
+    duration: 0.3,
+    ease: "power2.out",
+  });
+  tl.to("header", {
+    autoAlpha: 0,
+    duration: 0.5,
+    ease: "power1.out",
+  });
+</script>
+
+<!-- <section class="section">
+  <div id="hero-key" class="relative h-screen overflow-hidden">
+    <div
+      id="shadow-overlay"
+      class="absolute inset-0 pointer-events-none"
+      style="
+          --black-opacity: 0;
+          background: linear-gradient(160deg, rgba(0, 0, 0, var(--black-opacity)) 50%, rgba(0, 0, 0, 0) 100%);
+        "
+    >
+      <div class="grid grid-cols-2 w-full h-full">
+        <div class="border-r-4 border-b-8 border-white"></div>
+        <div class="border-l-4 border-b-8 border-white"></div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section>
+  <picture id="hero-key" class="relative h-screen block overflow-hidden">
+    <img
+      src="/hero2.png"
+      alt="Descripción de la imagen"
+      class="w-full h-full object-cover"
+    />
+    <div
+      id="shadow-overlay"
+      class="absolute inset-0 pointer-events-none"
+      style="
+          --black-opacity: 0;
+          background: linear-gradient(160deg, rgba(0, 0, 0, var(--black-opacity)) 50%, rgba(0, 0, 0, 0) 100%);
+        "
+    >
+      <div class="grid grid-cols-2 h-full w-full">
+        <div class="border-r-4 border-b-8 border-white">a</div>
+        <div class="border-l-4 border-b-8 border-white">a</div>
+      </div>
+    </div>
+  </picture>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#hero-key",
+      start: "top top",
+      end: "+=1000",
+      scrub: 1,
+      pin: true,
+    },
+  });
+
+  tl.to("#shadow-overlay", {
+    "--black-opacity": 0.5, // pasa de 0 a 1 (0% a 100% opaco)
+    ease: "none",
+  });
+  tl.to("header", {
+    autoAlpha: 0, // combina opacity: 0 y visibility: hidden
+    duration: 0.5,
+    ease: "power1.out",
+  });
+</script> -->
