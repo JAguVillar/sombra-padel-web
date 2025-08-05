@@ -111,6 +111,11 @@ a:hover {
   color: var(--color-primary);
 }
 
+.header-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: auto;

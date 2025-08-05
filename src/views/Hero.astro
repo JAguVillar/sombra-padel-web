@@ -87,11 +87,32 @@ import ArrowRight from "../components/icons/ArrowRight.astro";
     duration: 0.3,
     ease: "power2.out",
   });
-  tl.to("header", {
-    autoAlpha: 0,
-    duration: 0.5,
-    ease: "power1.out",
+
+  const tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#hero-key",
+      start: "bottom top", // cuando la parte de abajo de #hero toca la parte de arriba del viewport
+      toggleActions: "play none none reverse",
+      markers: true, // 🔧 opcional para ver dónde empieza
+    },
   });
+
+  tl2
+    .to("header", {
+      backgroundColor: "rgba(0, 0, 0, 0.3)",
+      duration: 0.2,
+      ease: "power1.out",
+    })
+    .to(".link", {
+      autoAlpha: 0,
+      duration: 0.2,
+      ease: "power1.out",
+    })
+    .to(".header-wrapper", {
+      maxWidth: "100%",
+      duration: 0.2,
+      ease: "power1.out",
+    });
 </script>
 
 <!-- 
