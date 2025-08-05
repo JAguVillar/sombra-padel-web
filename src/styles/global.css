@@ -54,7 +54,7 @@ section .primary {
   background-color: var(--color-bg-primary);
 }
 
-section .secondary {
+section.secondary {
   background-color: var(--color-bg-light);
 }
 
