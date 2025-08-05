@@ -9,19 +9,32 @@
   font-display: swap;
 }
 
+/* :root {  
+  --color-primary: #2e4f3e;
+  --color-secondary: #a0ae86;
+
+  --color-bg-light: #f3f5eb;
+  --color-text: #7c8a6c;
+  --color-highlight: #cddc9e;
+  --color-contrast: #ffffff;
+  
+  --font-primary: "Montserrat variable", sans-serif;
+  --font-secondary: "Lupio Black", sans-serif;
+} */
+
 :root {
   /* Colores principales */
-  --color-primary: #2e4f3e; /* Verde oscuro */
-  --color-secondary: #a0ae86; /* Verde claro del logo */
+  --color-primary: #0050a0; /* Azul pádel principal (fondo/header) */
+  --color-secondary: #0077c8; /* Azul cielo (botones, acentos) */
 
   /* Colores neutros */
-  --color-bg-light: #f3f5eb; /* Fondo general claro */
-  --color-text: #7c8a6c; /* Texto neutro */
-  --color-highlight: #cddc9e; /* Hover y acentos */
-  --color-contrast: #ffffff; /* Texto sobre fondos oscuros */
+  --color-bg-light: #f3f5eb; /* Fondo claro general */
+  --color-text: #4b5c6b; /* Texto neutro azulado */
+  --color-highlight: #8cc5f1; /* Hover/acentos suaves */
+  --color-contrast: #ffffff; /* Texto sobre azul oscuro */
 
   /* Tipografía */
-  --font-primary: "Montserrat variable", sans-serif;
+  --font-primary: "Montserrat Variable", sans-serif;
   --font-secondary: "Lupio Black", sans-serif;
 }
 
@@ -29,19 +42,33 @@ body {
   margin: 0;
   padding-left: 0;
   width: 100%;
-
   overflow-x: hidden;
   overscroll-behavior: none;
   font-family: var(--font-primary);
-  background-color: var(--color-bg-light);
+  background-color: var(--color-primary);
   color: var(--color-text);
   line-height: 1.6;
 }
 
-h1,
-h2,
-h4 {
-  color: var(--color-secondary);
+section .primary {
+  background-color: var(--color-bg-primary);
+}
+
+section .secondary {
+  background-color: var(--color-bg-light);
+}
+
+.section-content {
+  padding: 24px 0px 24px 32px;
+}
+
+h1 {
+  color: white;
+  margin: 0;
+  font-family: var(--font-secondary);
+}
+
+h2 {
   margin: 0;
   font-family: var(--font-secondary);
 }
@@ -49,6 +76,29 @@ h4 {
 h3 {
   margin: 0;
   font-family: var(--font-secondary);
+}
+
+.section-title-primary {
+  color: var(--color-contrast);
+}
+
+.section-title-secondary {
+  color: var(--color-primary);
+}
+
+h4 {
+  color: var(--color-text);
+  margin: 0;
+  font-family: var(--font-secondary);
+}
+
+p {
+  color: var(--color-text);
+  font-family: var(--font-primary);
+}
+
+.lugar-text-bg {
+  background-color: var(--color-bg-light);
 }
 
 a {
@@ -61,7 +111,7 @@ a:hover {
   color: var(--color-primary);
 }
 
-.container {
+.wrapper {
   max-width: 1200px;
   margin: auto;
 }
@@ -103,12 +153,4 @@ footer a:hover {
 
 .montserrat {
   font-family: var(--font-primary);
-}
-
-.section {
-  background-color: var(--color-primary);
-}
-
-.hero_layout {
-  height: calc(100vh - 216px);
 }
