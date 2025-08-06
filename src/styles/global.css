@@ -24,14 +24,14 @@
 
 :root {
   /* Colores principales */
-  --color-primary: #0050a0; /* Azul pádel principal (fondo/header) */
-  --color-secondary: #0077c8; /* Azul cielo (botones, acentos) */
+  --color-primary: #2e4f3e; /* Verde oscuro institucional */
+  --color-secondary: #a0ae86; /* Verde oliva claro para acentos */
 
   /* Colores neutros */
   --color-bg-light: #f3f5eb; /* Fondo claro general */
-  --color-text: #4b5c6b; /* Texto neutro azulado */
-  --color-highlight: #8cc5f1; /* Hover/acentos suaves */
-  --color-contrast: #ffffff; /* Texto sobre azul oscuro */
+  --color-text: #4a5643; /* Texto verde neutro */
+  --color-highlight: #c7b39c; /* Marrón claro/beige para acento */
+  --color-contrast: #ffffff; /* Contraste fuerte: texto sobre fondo oscuro */
 
   /* Tipografía */
   --font-primary: "Montserrat Variable", sans-serif;
