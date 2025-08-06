@@ -140,9 +140,7 @@ button:hover {
 header,
 footer {
   background-color: var(--color-primary);
-
   color: var(--color-contrast);
-  padding: 1em 2em;
 }
 
 header a,
