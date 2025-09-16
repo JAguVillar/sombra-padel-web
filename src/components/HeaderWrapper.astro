@@ -1,0 +1,38 @@
+---
+const { toggle } = Astro.props;
+import SombraPadel from "./icons/SombraPadel.astro";
+import Hamburger from "./icons/HamburgerIcon.astro";
+---
+
+<header
+  class="fixed top-0 z-50 w-full translate-y-0 transition-transform duration-300 ease-in-out px-8 py-4"
+>
+  <div class="w-full flex justify-between items-center">
+    <div
+      class="font-extrabold text-2xl montserrat text-center text-white hidden md:block"
+    >
+      <div class="flex flex-col items-center text-center">
+        <span>SOMBRA</span>
+        <span>PADEL</span>
+      </div>
+    </div>
+
+    <div class="block md:hidden">
+      <SombraPadel class="size-10" />
+    </div>
+
+    <div class="gap-12 normal-case hidden md:flex">
+      <a href="#">El lugar</a>
+      <a href="#">Nuestras canchas</a>
+      <a href="#">Clases</a>
+      <a href="#">Torneos</a>
+      <a href="#">Sobre nosotros</a>
+    </div>
+
+    <div class="block md:hidden">
+      <button onClick={toggle} aria-label="Abrir menú">
+        <Hamburger class="size-10 text-[#a0ae86]" />
+      </button>
+    </div>
+  </div>
+</header>
