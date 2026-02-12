@@ -3,20 +3,25 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import WhatsappCTA from "../components/WhatsappCTA.astro";
 import Footer from "../views/Footer.astro";
+import SEO from "../components/SEO.astro";
+import StructuredData from "../components/StructuredData.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <SEO />
+    <StructuredData />
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <WhatsappCTA />
     <Footer />
   </body>

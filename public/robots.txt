@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: Actualizar con dominio final
+Sitemap: https://sombra-padel.vercel.app/sitemap-index.xml

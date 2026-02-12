@@ -1,0 +1,59 @@
+---
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Sombra Padel",
+  "description": "Canchas de padel bajo techo con clases, torneos y reservas de canchas flexibles",
+  "image": "https://sombra-padel.vercel.app/hero2.png",
+  "url": "https://sombra-padel.vercel.app",
+  // TODO: Completar con datos reales
+  "telephone": "+54-XXX-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle XXX",
+    "addressLocality": "Ciudad",
+    "addressRegion": "Provincia",
+    "postalCode": "XXXXX",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "XX.XXXXX",
+    "longitude": "XX.XXXXX"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "23:00"
+    }
+  ]
+  // TODO: Agregar redes sociales en "sameAs": ["https://instagram.com/...", "https://facebook.com/..."]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Clases de Padel",
+  "provider": {
+    "@type": "SportsActivityLocation",
+    "name": "Sombra Padel"
+  }
+};
+
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Torneos de Padel",
+  "description": "Torneos regulares de padel organizados por Sombra Padel",
+  "location": {
+    "@type": "SportsActivityLocation",
+    "name": "Sombra Padel"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
