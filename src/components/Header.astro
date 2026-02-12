@@ -22,16 +22,16 @@ import CloseIcon from "./icons/CloseIcon.astro";
       <SombraPadel class="size-10" />
     </div>
 
-    <div class="gap-12 normal-case hidden md:flex">
-      <a href="#">El lugar</a>
-      <a href="#">Nuestras canchas</a>
-      <a href="#">Clases</a>
-      <a href="#">Torneos</a>
-      <a href="#">Sobre nosotros</a>
-    </div>
+    <nav class="gap-12 normal-case hidden md:flex" aria-label="Navegación principal">
+      <a href="#lugar-key">El lugar</a>
+      <a href="#canchas-key">Nuestras canchas</a>
+      <a href="#clases-key">Clases</a>
+      <a href="#torneos-key">Torneos</a>
+      <a href="#nosotros-key">Sobre nosotros</a>
+    </nav>
 
     <div class="block md:hidden">
-      <button id="menu-toggle" aria-label="Abrir menú" class="open-menu">
+      <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="open-menu">
         <Hamburger class="size-10 text-[#a0ae86] burger-icon" />
         <CloseIcon class="size-10 text-[#a0ae86] hidden close-icon" />
       </button>
@@ -54,6 +54,7 @@ import CloseIcon from "./icons/CloseIcon.astro";
     if (menu && toggleBtn) {
       toggleBtn.addEventListener("click", () => {
         isOpen = !isOpen;
+        toggleBtn.setAttribute('aria-expanded', isOpen.toString());
 
         if (isOpen) {
           menu.classList.remove("translate-x-full");

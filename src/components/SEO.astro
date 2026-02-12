@@ -1,0 +1,42 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  ogType?: 'website' | 'article';
+}
+
+const {
+  title = 'Sombra Padel - Canchas de Padel Bajo la Sombra',
+  description = 'Jugá al padel en las mejores canchas bajo techo. Clases personalizadas, torneos competitivos y reservas de canchas flexibles. Tu espacio para jugar bajo la sombra.',
+  image = '/hero2.png',
+  ogType = 'website'
+} = Astro.props;
+
+// Usar Astro.url cuando esté configurado el site en config
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://sombra-padel.vercel.app');
+const ogImageURL = new URL(image, Astro.site || 'https://sombra-padel.vercel.app');
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageURL} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImageURL} />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#084330" />
